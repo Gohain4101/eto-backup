@@ -352,13 +352,14 @@ lName:record.lName,
 auditDate: record.auditDate ? moment(record.auditDate).format("DD/MM/YYYY") : "",
 micahTeam: record.micahTeam_16159,
 createdby:record.fName+" "+record.lName,
+subjectName:record.subjectName,
   };
 }
 
  
 export function transformAihwform(records) {
   const minimalKeys = [
-    "subjectID",    
+    "subjectName",    
     "auditDate",
     "createdby",
     // "dateLastUpdated",

@@ -166,7 +166,7 @@ export const incomingReferralConfig = {
 
 export const AIHWFormTableConfig = {
   columns: [
-   { key: "subjectID", label: "Subject Type",  filter: "text" },
+   { key: "subjectName", label: "Subject Type",  filter: "text" },
     { key: "auditDate", label: "Audit Date", filter: "text" },
      { key: "createdby", label: "Created By", filter: "text" },
     { key: "micahTeam", label: "Micah Team",  filter: false },  
@@ -196,6 +196,7 @@ export const brokeragePaymentTableConfig = {
     }
     ]
 };
+
 
 
 
@@ -237,14 +238,17 @@ export const msuTableConfig = {
 
 export const consentTableConfig = {
   columns: [
-    { key: 'program',         label: 'Program' },
-    { key: 'dateCompleted',     label: 'Date Completed' },
-    { key: 'lastUpdatedby', label: 'Last Updated By' },
-    { key: 'status', label: 'Status' },
-    { key: 'dateParticipantSigned',   label: 'Date Participant Signed' },
+    { key: "programName", label: "Program Name",  filter: "text" },
+    { key: "auditDate", label: "Date Complete", filter: false },
+    
+    { key: "workerDatesigned_25244", label: "Last Update By",  filter: false },  
+    { key: "consentstatus_25257", label: "Status",  filter: false },
+  
+    { key: "dateofSignature_25242", label: "Date Participant Signed",  filter: "text" },
     {
-      key: 'actions',
-      label: 'Actions'
+      key: "actions",
+      label: "Actions",
+       filter: false
     }
   ]
 };

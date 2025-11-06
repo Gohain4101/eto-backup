@@ -42,6 +42,33 @@ const tabs = [
     key: "documents",
     label: "Documents",
     icon: <FaFileAlt />,
+  },
+  ,
+  {
+    key: "documents",
+    label: "Documents",
+    icon: <FaFileAlt />,
+  },
+  {
+    key: "brokeragePayment",
+    label: "Brokerage Payment",
+    icon: <FaDollarSign />,
+  },
+  {
+    key: "safetyAlerts",
+    label: "Safety Alerts",
+    icon: <FaExclamationTriangle />,
+  },
+  { key: "consent", label: "Consent", icon: <FaClipboardCheck /> },
+  {
+    key: "msu",
+    label: "MSU",
+    icon: <FaChartLine />,
+  },
+  {
+    key: "incomingReferral",
+    label: "Incoming Referrral",
+    icon: <FaUserFriends />,
   }
 ];
 

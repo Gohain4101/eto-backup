@@ -14,8 +14,6 @@ import Consent from "components/Consent/Consent";
 import MSU  from "components/MSU/MSU";
 import ServiceAndActivities from "components/ServiceAndActivities/ServiceAndActivities";
 import Documents from "components/Documents/Documents";
-import consentData from "assets/consent.json";
-import safetyAlerts from "assets/safetyAlerts.json";
 import { supportPeriodsTableConfig, searchResultsTableConfig, addressBookTableConfig, wdynTableConfig, consentTableConfig, serviceActivitiesTableConfig, documentTableConfig, plannedActionTableConfig, incomingReferralConfig, AIHWFormTableConfig, SafetyAlertsTableConfig, msuTableConfig, brokeragePaymentTableConfig } from "common/DynamicTable/TableComponents";
 import { fetchParticipantById } from "actions/ParticipantAction/ParticipantAction";
 import { getSearchParticipants } from "actions/SearchAction/SearchAction";
@@ -194,9 +192,11 @@ function SearchPage({ selectedProgram, programs }) {
               incomingReferral: <IncomingReferral participant={participant} config={incomingReferralConfig} programCode={program}/>,
               aihw: <AIHWForm participant={participant} config={AIHWFormTableConfig}></AIHWForm>,
               brokeragePayment:<BrokeragePayment participant={participant} config={brokeragePaymentTableConfig}></BrokeragePayment>,
-              consent: <Consent consent={consentData.consent} config={consentTableConfig} consentDetails={consentData.consentDetails}></Consent>,
+              
               msu:<MSU participant={participant} config={msuTableConfig}></MSU>,
-              safetyAlerts:(<SafetyAlerts participant={participant} config={SafetyAlertsTableConfig}></SafetyAlerts>),
+              consent:<Consent participant={participant} config={consentTableConfig}></Consent>,
+              safetyAlerts:<SafetyAlerts participant={participant} config={SafetyAlertsTableConfig}></SafetyAlerts>,
+            
             }}
           </TouchPointsTabs>
         </>
