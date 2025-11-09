@@ -6,7 +6,7 @@ function SaftyAlertsDetailView({ detail }) {
   if (!detail) return null;
 
   const fieldLabels = {
-   micahTeam_11292 : "Micah Team",
+   entityName : "Micah Team",
 	extremeRisk_23528 : "Extreme Risk",
 	alertCategory_9599 : "Risk Notification Category",
 	notes_9602 : "Notes",

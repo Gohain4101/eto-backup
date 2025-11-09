@@ -99,17 +99,22 @@ totaltimespentonbehalfofparticipant_23290:record.totaltimespentonbehalfofpartici
 hastheparticipantreturnedhome_28343:record.hastheparticipantreturnedhome_28343,
 hastheparticipantreturnedhome_28343_ResponseChoiceID:record.hastheparticipantreturnedhome_28343_ResponseChoiceID,
 participantAge_29347:record.participantAge_29347,
-totalefforttimeforparticipant_33292:record.totalefforttimeforparticipant_33292
+totalefforttimeforparticipant_33292:record.totalefforttimeforparticipant_33292,
+auditName:record.fName+" "+record.lName,
+subjectName:record.subjectName,
+programName:record.programName,
+entityName:record.entityName,
   };
 }
 
 
 export function transformmsu(records) {
   const minimalKeys = [
-    "labourForceStatus_16397",
-    "micahTeam_16473",    
-    "age_16522",
-    "totalefforttimeforparticipant_33292"
+    "auditDate",
+    "responseCreatedDate",
+    "entityName",    
+    "programName",
+    "auditName"
     
   ];
 

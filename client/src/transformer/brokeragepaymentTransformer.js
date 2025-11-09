@@ -126,7 +126,11 @@ aIHWpurpose_28341:record.aIHWpurpose_28341,
 aIHWpurpose_28341_ResponseChoiceID:record.aIHWpurpose_28341_ResponseChoiceID,
 ofchildrenunder5_32024:record.ofchildrenunder5_32024,
 childrenbetween6and12_32025:record.childrenbetween6and12_32025,
-childrenbetween13and18_32026:record.childrenbetween13and18_32026
+childrenbetween13and18_32026:record.childrenbetween13and18_32026,
+auditName:record.fName+" "+record.lName,
+subjectName:record.subjectName,
+programName:record.programName,
+entityName:record.entityName
 
 
   };
@@ -135,11 +139,13 @@ childrenbetween13and18_32026:record.childrenbetween13and18_32026
 
 export function transformBrokeragePayment(records) {
   const minimalKeys = [
-    "vouchertype_6553",
-    "Status",
-    "purpose_6508",    
-    "chequePayableTo_6554",
-    "micahTeam_11295",
+    "auditDate",
+    "responseCreatedDate",
+    "formIdentifier",
+    "collectionID",        
+    "programName",
+    "auditName",
+    "transactionDate_6525"
     
   ];
 

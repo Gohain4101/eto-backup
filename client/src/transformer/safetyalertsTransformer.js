@@ -38,7 +38,11 @@ datealertceasedbeingactive_9605:record.datealertceasedbeingactive_9605,
 micahTeam_11292:record.micahTeam_11292,
 extremeRisk_23528:record.extremeRisk_23528,
 extremeRisk_23528_ResponseChoiceID:record.extremeRisk_23528_ResponseChoiceID,
-safetydocuments_31786:record.safetydocuments_31786
+safetydocuments_31786:record.safetydocuments_31786,
+auditName:record.fName+" "+record.lName,
+subjectName:record.subjectName,
+programName:record.programName,
+entityName:record.entityName
 
   };
 }
@@ -47,7 +51,7 @@ safetydocuments_31786:record.safetydocuments_31786
 export function transformSafetyAlerts(records) {
   const minimalKeys = [
     "reviewdate_9603",
-    "micahTeam_11292",
+    "entityName",
     "extremeRisk_23528",
     "alertCategory_9599",
     "alertType_9600",

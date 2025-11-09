@@ -179,16 +179,20 @@ export const AIHWFormTableConfig = {
     }
     ]
 };
- 
+
+
+
 export const brokeragePaymentTableConfig = {
   columns: [
-   { key: "vouchertype_6553", label: "Voucher Type",  filter: "text" },
-    { key: "purpose_6508", label: "Purpose", filter: "text" },
+   { key: "auditDate", label: "Date Completed",  filter: "text" },
+    { key: "responseCreatedDate", label: "Last Updated", filter: "text" },
     
-    { key: "chequePayableTo_6554", label: "Cheque Payable",  filter: false },  
-    { key: "micahTeam_11295", label: "Micah Team",  filter: false },
+    { key: "formIdentifier", label: "Identifier",  filter: false },  
+    { key: "collectionID", label: "Collection",  filter: false },
   
-    //{ key: "completionDate", label: "Close Date",  filter: "text" },
+    { key: "programName", label: "Program",  filter: "text" },
+    { key: "auditName", label: "Staff",  filter: "text" },
+    { key: "transactionDate_6525", label: "Transaction Date",  filter: "text" },
     {
       key: "actions",
       label: "Actions",
@@ -203,7 +207,7 @@ export const brokeragePaymentTableConfig = {
 export const SafetyAlertsTableConfig = {
   columns: [
    { key: "reviewdate_9603", label: "Date Last Updated",  filter: "text" },
-   { key: "micahTeam_11292", label: "Micah Team",  filter: false }, 
+   { key: "entityName", label: "Micah Team",  filter: false }, 
    { key: "extremeRisk_23528", label: "Extreme Risk", filter: "text" },
      { key: "alertCategory_9599", label: "Category", filter: "text" },
      { key: "alertType_9600", label: "Type", filter: "text" },
@@ -219,15 +223,16 @@ export const SafetyAlertsTableConfig = {
     ]
 };
    
+
 export const msuTableConfig = {
   columns: [
-   { key: "labourForceStatus_16397", label: "Labour Force Status",  filter: "text" },
-    { key: "micahTeam_16473", label: "Micah Team", filter: "text" },
+   { key: "auditDate", label: "Date Completed",  filter: "text" },
+    { key: "responseCreatedDate", label: "Last Updated", filter: "text" },
     
-    { key: "age_16522", label: "Age",  filter: false },  
-    { key: "totalefforttimeforparticipant_33292", label: "total effort time for participant",  filter: false },
+    { key: "entityName", label: "Micah Team",  filter: false },  
+    { key: "programName", label: "Program",  filter: false },
   
-    //{ key: "completionDate", label: "Close Date",  filter: "text" },
+    { key: "auditName", label: "Staff",  filter: "text" },
     {
       key: "actions",
       label: "Actions",

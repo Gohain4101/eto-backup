@@ -36,17 +36,17 @@
 }
 .msu-panel th:nth-child(2),
 .msu-panel td:nth-child(2) {
-  width: 130px;
+  width: 190px;
 }
 
 .msu-panel th:nth-child(3),
 .msu-panel td:nth-child(3) {
-  width: 130px;
+  width: 280px;
 }
 
 .msu-panel th:nth-child(4),
 .msu-panel td:nth-child(4) {
-  width: 130px;
+  width: 190px;
 }
 /* Notes column */
 .msu-panel th.notes,
