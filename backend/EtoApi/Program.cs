@@ -45,6 +45,9 @@ builder.Services.AddTransient<SafetyAlertsRepository>();
 builder.Services.AddTransient<IncomingReferralRepository>();
 builder.Services.AddTransient<MSURepository>();
 builder.Services.AddTransient<ConsentRepository>();
+builder.Services.AddTransient<RedressRepository>();
+builder.Services.AddTransient<RedressNotesRepository>();
+
 
 builder.Services.AddSingleton<FamilyService>();
 builder.Services.AddSingleton<ParticipantService>();
@@ -62,6 +65,8 @@ builder.Services.AddSingleton<BrokeragePaymentService>();
 builder.Services.AddSingleton<IncomingReferralService>();
 builder.Services.AddSingleton<MSUService>();
 builder.Services.AddSingleton<ConsentService>();
+builder.Services.AddSingleton<RedressService>();
+builder.Services.AddSingleton<RedressNotesService>();
 
 var app = builder.Build();
 

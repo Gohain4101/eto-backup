@@ -25,9 +25,15 @@ namespace EtoApi.Controllers
         private readonly MSUService _msuService;
         private readonly ConsentService _consentService;
         private readonly IncomingReferralService _incomingReferralService;
+        private readonly RedressService _redressService;
+        private readonly RedressNotesService _redressnotesService;
 
         // Inject all services via constructor
-        public ParticipantController(FamilyService familyService, ParticipantService participantService, SupportPeriodService supportPeriodService, ServiceActivitiesService serviceActivitiesService, DocumentService documentsService, AddressBookService addressService, PlannedActionService plannedActionService, WdynService wdynService, SearchParticipantService searchParticipantService, AIHWFormService aIHWFormService, BrokeragePaymentService brokeragePaymentService, SafetyAlertsService safetyAlertsService, MSUService msuService, ConsentService consentService, IncomingReferralService incomingReferralService)
+        public ParticipantController(FamilyService familyService, ParticipantService participantService, SupportPeriodService supportPeriodService, 
+            ServiceActivitiesService serviceActivitiesService, DocumentService documentsService, AddressBookService addressService, PlannedActionService plannedActionService, 
+            WdynService wdynService, SearchParticipantService searchParticipantService, AIHWFormService aIHWFormService, BrokeragePaymentService brokeragePaymentService, 
+            SafetyAlertsService safetyAlertsService, MSUService msuService, ConsentService consentService, IncomingReferralService incomingReferralService, 
+            RedressService redressService, RedressNotesService redressnotesService)
         {
             _familyService = familyService;
             _participantService = participantService;
@@ -44,6 +50,8 @@ namespace EtoApi.Controllers
             _msuService = msuService;
             _consentService = consentService;
             _incomingReferralService = incomingReferralService;
+            _redressService = redressService;
+            _redressnotesService = redressnotesService;
         }
 
         [HttpGet("family-details/{id}")]
@@ -209,6 +217,33 @@ namespace EtoApi.Controllers
                 return NotFound();
             }
             return Ok(incomingReferral);
+        }
+
+       
+        [HttpGet("redress/{id}")]
+        public async Task<ActionResult<List<RedressModel>>> GetRedress(int id)
+        {
+
+            var redress = await _redressService.GetRedressAsync(id);
+            if (redress == null || redress.Count == 0)
+            {
+                return NotFound();
+            }
+            return Ok(redress);
+        }
+
+
+
+        [HttpGet("redress-notes/{id}")]
+        public async Task<ActionResult<List<RedressNotesModel>>> GetRedressNotes(int id)
+        {
+
+            var redressnotes = await _redressnotesService.GetRedressNotesAsync(id);
+            if (redressnotes == null || redressnotes.Count == 0)
+            {
+                return NotFound();
+            }
+            return Ok(redressnotes);
         }
     }
 }
