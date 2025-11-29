@@ -97,7 +97,7 @@ function SaftyAlerts({ participant, config }) {
         onClose={handleCloseSidebar}
         title={
           viewedData
-            ? `Safty Alerts for ${viewedData.program || ""}`
+            ? `Safty Alerts for ${viewedData.programName || ""}`
             : ""
         }
       >

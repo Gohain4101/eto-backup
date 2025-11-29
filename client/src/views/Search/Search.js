@@ -12,9 +12,14 @@ import BrokeragePayment from "components/BrokeragePayment/BrokeragePayment";
 import SafetyAlerts  from "components/SafetyAlerts/SafetyAlerts";
 import Consent from "components/Consent/Consent";
 import MSU  from "components/MSU/MSU";
+import Redress from "components/Redress/Redress";
+import RedressNotes from "components/RedressNotes/RedressNotes";
 import ServiceAndActivities from "components/ServiceAndActivities/ServiceAndActivities";
 import Documents from "components/Documents/Documents";
-import { supportPeriodsTableConfig, searchResultsTableConfig, addressBookTableConfig, wdynTableConfig, consentTableConfig, serviceActivitiesTableConfig, documentTableConfig, plannedActionTableConfig, incomingReferralConfig, AIHWFormTableConfig, SafetyAlertsTableConfig, msuTableConfig, brokeragePaymentTableConfig } from "common/DynamicTable/TableComponents";
+import { supportPeriodsTableConfig, searchResultsTableConfig, addressBookTableConfig, wdynTableConfig, 
+  consentTableConfig, serviceActivitiesTableConfig, documentTableConfig, plannedActionTableConfig, 
+  incomingReferralConfig, AIHWFormTableConfig, SafetyAlertsTableConfig, msuTableConfig, brokeragePaymentTableConfig, 
+  redressTableConfig, redressNotesTableConfig } from "common/DynamicTable/TableComponents";
 import { fetchParticipantById } from "actions/ParticipantAction/ParticipantAction";
 import { getSearchParticipants } from "actions/SearchAction/SearchAction";
 import Spinner from "common/Spinner/Spinner";
@@ -196,7 +201,9 @@ function SearchPage({ selectedProgram, programs }) {
               msu:<MSU participant={participant} config={msuTableConfig}></MSU>,
               consent:<Consent participant={participant} config={consentTableConfig}></Consent>,
               safetyAlerts:<SafetyAlerts participant={participant} config={SafetyAlertsTableConfig}></SafetyAlerts>,
-            
+              redress:<Redress participant={participant} config={redressTableConfig}></Redress>,
+              redressNotes:<RedressNotes participant={participant} config={redressNotesTableConfig}></RedressNotes>,
+              
             }}
           </TouchPointsTabs>
         </>

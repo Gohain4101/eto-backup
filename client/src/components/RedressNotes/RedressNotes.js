@@ -3,42 +3,45 @@ import { FaEye } from "react-icons/fa";
 import DynamicTable from "common/DynamicTable/DynamicTable";
 import Sidebar from "components/Sidebar/Sidebar";
 import Tabs from "components/Tabs/Tabs";
-import AIHWFormDetailView from "../AIHWFormDetailView/AIHWFormDetailView";
-import AIHWFormPresentingDetailView from "../AIHWFormDetailView/AIHWFormPresentingDetailView";
-import AIHWFormSummaryDetailView from "../AIHWFormDetailView/AIHWFormSummaryDetailView";
-import { fetchaihwForm } from "actions/AIHWFormAction/AIHWFormAction";
-import Spinner from "common/Spinner/Spinner";
-import "./AIHWForm.css";
+import RedressNotesGeneralDetailView from "../RedressNotesDetailView/RedressNotesGeneralDetailView";
+import RedressNotesDetailView from "../RedressNotesDetailView/RedressNotesDetailView";
+import RedressNotesScoringDetailView from "../RedressNotesDetailView/RedressNotesScoringDetailView";
+import RedressNotesEffortsDetailView from "../RedressNotesDetailView/RedressNotesEffortsDetailView";
 
-function AIHWForm({ participant, config }) {
+
+import { fetchRedressNotes } from "../../actions/RedressNotesAction/RedressNotesAction";
+import Spinner from "common/Spinner/Spinner";
+import "./RedressNotes.css";
+
+function RedressNotes({ participant, config }) {
   const [viewedData, setViewedData] = useState(null);
   const [activeTab, setActiveTab] = useState(0);
-  const [AIHWForm, setAIHWForm] = useState([]);
-  const [AIHWFormDetails, setAIHWFormDetails] = useState([]);
+  const [RedressNotes, setRedressNotes] = useState([]);
+  const [RedressNotesDetails, setRedressNotesDetails] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    async function getAIHWForm() {
+    async function getRedressNotes() {
       try {
         setLoading(true);
-        const result = await fetchaihwForm(participant.clid);
+        const result = await fetchRedressNotes(participant.clid);
         console.log(result);
-        setAIHWForm(result);
-        setAIHWFormDetails(result.full);
+        setRedressNotes(result);
+        setRedressNotesDetails(result.full);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching AIHW Form:", error);
+        console.error("Error fetching  Redress Notes:", error);
       }
     }
 
     if (participant.clid) {
-      getAIHWForm();
+      getRedressNotes();
     }
   }, [participant.clid]);
 
   const handleView = (row) => {
     // If you want to pass the full detail instead of row
-    const detail = AIHWFormDetails.find(d => d.id === row.id) || row;
+    const detail = RedressNotesDetails.find(d => d.id === row.id) || row;
     setViewedData(detail);
   };
 
@@ -46,17 +49,23 @@ function AIHWForm({ participant, config }) {
 
   const tabs = [
     {
-      label: "General Details, Housing Status",
-      content: <AIHWFormDetailView detail={viewedData} />,
+      label: "General Details",
+      content: <RedressNotesGeneralDetailView detail={viewedData} />,
     },
     {
-      label: "Presenting Reasons",
-      content: <AIHWFormPresentingDetailView detail={viewedData} />,
+      label: "Notes",
+      content: <RedressNotesDetailView detail={viewedData} />,
     },
+     {
+      label: "Scoring",
+      content: <RedressNotesScoringDetailView detail={viewedData} />,
+    },
+ 
     {
-      label: "Summary Observations and Efforts Details",
-      content: <AIHWFormSummaryDetailView detail={viewedData} />,
-    },
+      label: "Effort Details",
+      content: <RedressNotesEffortsDetailView detail={viewedData} />,
+    }
+    
   ];
 
   const configWithActions = {
@@ -85,15 +94,15 @@ function AIHWForm({ participant, config }) {
   };
 
   return (
-    <div className="AIHWForm-panel">
+    <div className="redressNotes-panel">
       <div className="panel-header">
-        <strong>AIHW Form</strong>
+        <strong>Redress Notes</strong>
       </div>
       {loading && <Spinner />}
       {!loading && (
         <div className="panel-section">
           <DynamicTable
-            data={AIHWForm.minimal || []}
+            data={RedressNotes.minimal || []}
             config={configWithActions}
             className="sa-table"
             enableFilter={false}
@@ -105,7 +114,7 @@ function AIHWForm({ participant, config }) {
         onClose={handleCloseSidebar}
         title={
           viewedData
-            ? `AIHW Form for ${viewedData.programName || ""}`
+            ? `Redress Notes for ${viewedData.programName || ""}`
             : ""
         }
       >
@@ -115,4 +124,4 @@ function AIHWForm({ participant, config }) {
   );
 }
 
-export default AIHWForm;
+export default RedressNotes;

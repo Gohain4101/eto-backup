@@ -108,7 +108,7 @@ function MSU({ participant, config }) {
         onClose={handleCloseSidebar}
         title={
           viewedData
-            ? `MSU for ${viewedData.program || ""}`
+            ? `MSU for ${viewedData.programName || ""}`
             : ""
         }
       >

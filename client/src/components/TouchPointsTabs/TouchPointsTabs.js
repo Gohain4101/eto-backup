@@ -13,7 +13,8 @@ import {
   FaNotesMedical,
   FaDollarSign,
   FaChartLine,
-  FaUserFriends
+  FaUserFriends,
+  
 } from "react-icons/fa";
 import "./TouchPointsTabs.css";
 
@@ -69,7 +70,17 @@ const tabs = [
     key: "incomingReferral",
     label: "Incoming Referrral",
     icon: <FaUserFriends />,
-  }
+  },
+  {
+    key: "redress",
+    label: "Redress - Initial Contact Form",
+    icon: <FaChartLine />,
+  },
+   {
+    key: "redressNotes",
+    label: "Redress Notes",
+    icon: <FaChartLine />,
+  },
 ];
 
 function TouchPointsTabs({ children, activeTab, onTabChange }) {

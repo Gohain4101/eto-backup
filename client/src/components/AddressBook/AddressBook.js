@@ -93,7 +93,7 @@ function AddressBook({ participant, config, programCode }) {
       {!loading &&  <div className="address-table-wrapper">
         <DynamicTable data={addressBook.minimal || []} config={configWithActions} className="address-book-table" />
       </div> }
-      <Sidebar visible={!!viewedData} onClose={handleCloseSidebar} title={viewedData ? `Addressbook for ${participant.fName} ${participant.lName}` : ''}>
+      <Sidebar visible={!!viewedData} onClose={handleCloseSidebar} title={viewedData ? `Address book for ${participant.fName} ${participant.lName}` : ''}>
        <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab}/>
       </Sidebar>
     </div>

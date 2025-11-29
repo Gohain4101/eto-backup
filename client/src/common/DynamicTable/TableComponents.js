@@ -259,3 +259,39 @@ export const consentTableConfig = {
 };
 
 
+
+export const redressTableConfig = {
+  columns: [
+   
+   { key: "auditDate", label: "Date Completed",  filter: "text" },
+    { key: "responseCreatedDate", label: "Date Last Updated", filter: "text" },
+      { key: "auditName", label: "Last Updated By",  filter: "text" },
+    { key: "entityName", label: "Micah Team",  filter: false },  
+   
+  
+    {
+      key: "actions",
+      label: "Actions",
+       filter: false
+    }
+  ]
+};
+
+
+export const redressNotesTableConfig = {
+  columns: [
+   
+   { key: "auditDate", label: "Date Completed",  filter: "text" },
+    { key: "responseCreatedDate", label: "Date Last Updated", filter: "text" },
+      { key: "auditName", label: "Last Updated By",  filter: "text" },
+    { key: "entityName", label: "Micah Team",  filter: false },  
+   
+  
+    {
+      key: "actions",
+      label: "Actions",
+       filter: false
+    }
+  ]
+};
+

@@ -29,7 +29,7 @@ labourForceStatus_14716 : "If the participant is aged 15 or older, what is their
 ifTheParticipantIs15yrsWhatIsTheirEmploymentStatus_14711 :"If the participant is employed - what is their employment status?",
 ifTheParticipantIs15yrsWhatIsTheirEmploymentStatus_14717 :"If the participant is employed - what is their employment status?",
 mainSourceOfIncome_14718 :"Main Source of income",
-mainSourceOfIncome_14712 :"Main Source of income",
+//mainSourceOfIncome_14712 :"Main Source of income",
 isTheParticipantCurrentlyRegisteredForAGovernmentBenefitPensionOrAllowanceButAwaitingYourFirst_14719: "Is the participant currently registered for a government benefit, pension or allowance but awaiting the first payment?",
 isTheParticipantCurrentlyRegisteredForAGovernmentBenefitPensionOrAllowanceButAwaitingYourFirst_14713 : "Is the participant currently registered for a government benefit, pension or allowance but awaiting the first payment?",
 isTheParticipantUndertakingFormalStudyOrTrainingEgSchoolUniversityVocationalStudiesSuchAsTafe_14720 :"Is the participant undertaking formal study or training(e.g school, university, vocational studies such as TAFE)?",
