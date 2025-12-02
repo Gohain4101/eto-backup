@@ -39,9 +39,7 @@ namespace EtoApi.Models
         public string? LName { get; set; }
         public string? SubjectName { get; set; }
         public string? ProgramName { get; set; }
-
         public string? EntityName { get; set; }
-
 
     }
 }

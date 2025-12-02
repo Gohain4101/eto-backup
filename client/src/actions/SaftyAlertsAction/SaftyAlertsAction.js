@@ -1,9 +1,10 @@
 import {SaftyAlertsDatadata} from '../SaftyAlertsAction/SaftyAlertsData.json';
 import { transformSafetyAlerts } from '../../transformer/safetyalertsTransformer';
+
 export async function fetchSaftyAlerts(id) {
   try {
     const response = await fetch(
-      `http://localhost:5001/participant/safety-alerts/${id}`,
+      `${process.env.REACT_APP_API_BASE}/participant/safety-alerts/${id}`,
     );
     if (!response.ok) {
       // Return empty results if API call fails

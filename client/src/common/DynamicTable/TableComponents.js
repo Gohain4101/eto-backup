@@ -5,7 +5,7 @@ export const supportPeriodsTableConfig = {
   columns: [
     { key: "programName", label: "Program",  filter: "text" },
     { key: "subjectType", label: "Subject Type",  filter: "text" },
-    { key: "dateLastUpdated", label: "Date Last Updated",  filter: "text" },
+    { key: "auditDate", label: "Date Last Updated",  filter: "text" },
     { key: "StaffName", label: "Last Updated By",  filter: false },
     { key: "micahTeam", label: "Micah Team",  filter: "text" },
     { key: "submitsReport", label: "AIHW/SHS",  filter: "text" },
@@ -51,8 +51,6 @@ export const searchResultsTableConfig = ( fetchParticipant ) => {
       ),
     },
     { key: "caseNumber", label: "Case Number" },
-    { key: "RealOrFake", label: "Real or Fake" },
-    { key: "genderIfincorrect", label: "Gender" },
     { key: "dateCreated", label: "Program Start Date" },
   ]
 }
@@ -60,7 +58,7 @@ export const searchResultsTableConfig = ( fetchParticipant ) => {
 
 export const addressBookTableConfig = {
   columns: [
-    { key: 'auditDate', label: 'Audit Date' },
+    { key: 'auditDate', label: 'Date last updated' },
     { key: 'whoseContactDetails_value', label: 'Who is This?' },
     { key: 'name', label: 'Name' },
     {
@@ -250,6 +248,88 @@ export const consentTableConfig = {
     { key: "consentstatus_25257", label: "Status",  filter: false },
   
     { key: "dateofSignature_25242", label: "Date Participant Signed",  filter: "text" },
+    {
+      key: "actions",
+      label: "Actions",
+       filter: false
+    }
+  ]
+};
+
+export const programHistoryConfig = {
+  columns: [
+    { key: 'clid',         label: 'Case Number' },
+    { key: 'programName',     label: 'Program Name' },
+    { key: 'programStartDate', label: 'Start Date' },
+    { key: 'programEndDate', label: 'End Date' },
+    { key: 'auditDate',   label: 'Audit Date' },
+    {
+      key: 'staffName',
+      label: 'Audti Staff'
+    }
+  ]
+};
+
+export const lotusNotesConfig = {
+  columns: [
+    { key: 'responseCreatedDate',     label: 'Date created' },
+    { key: 'auditDate', label: 'Last updated date' },
+    { key: 'entityName', label: 'Micah Team' },
+    { key: 'scoring_31496',   label: 'Scoring' },
+    {
+      key: 'StaffName',
+      label: 'Last updated by'
+    },
+    {
+      key: "actions",
+      label: "Actions",
+       filter: false
+    }
+  ]
+};
+
+export const lotusInitialFormConfig = {
+  columns: [
+    { key: 'responseCreatedDate',     label: 'Date created' },
+    { key: 'auditDate', label: 'Last updated date' },
+    { key: 'entityName', label: 'Micah Team' },
+    {
+      key: 'StaffName',
+      label: 'Last updated by'
+    },
+    {
+      key: 'actions',
+      label: 'Actions'
+    }
+  ]
+};
+
+export const redressTableConfig = {
+  columns: [
+   
+   { key: "auditDate", label: "Date Completed",  filter: "text" },
+    { key: "responseCreatedDate", label: "Date Last Updated", filter: "text" },
+      { key: "auditName", label: "Last Updated By",  filter: "text" },
+    { key: "entityName", label: "Micah Team",  filter: false },  
+   
+  
+    {
+      key: "actions",
+      label: "Actions",
+       filter: false
+    }
+  ]
+};
+
+export const redressNotesTableConfig = {
+  columns: [
+   
+   { key: "auditDate", label: "Date Completed",  filter: "text" },
+    { key: "responseCreatedDate", label: "Date Last Updated", filter: "text" },
+      { key: "auditName", label: "Last Updated By",  filter: "text" },
+    { key: "entityName", label: "Micah Team",  filter: false },  
+   
+  
     {
       key: "actions",
       label: "Actions",

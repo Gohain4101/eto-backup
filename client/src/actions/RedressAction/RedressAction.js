@@ -1,8 +1,9 @@
 import { transformredress } from '../../transformer/redressTransformer';
+
 export async function fetchRedress(id) {
   try {
     const response = await fetch(
-      `http://localhost:5001/participant/redress/${id}`,
+      `${process.env.REACT_APP_API_BASE}/participant/redress/${id}`,
     );
     if (!response.ok) {
       // Return empty results if API call fails
